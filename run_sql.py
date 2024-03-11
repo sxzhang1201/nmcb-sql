@@ -38,7 +38,7 @@ def test_castor():
 	# Load Castor CSV file
 	data = pd.read_csv(castor_file_path)
 	
-	# Mappings (CSV variable : SQL data model variable)
+	# A dictionary for representing mappings (Castor variable : SQL data model variable)
 	variable_mapping = {
 		'Castor Participant ID': 'participant_id',
 		'sex': 'sex_at_birth',
