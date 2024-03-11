@@ -3,7 +3,7 @@ import sql_statements
 import pandas as pd
 
 
-if __name__ == '__main__':
+def test_castor():
 	database_path = 'test_castor.db'
 	castor_file_path = 'transform_castor.csv'
 	
@@ -23,7 +23,7 @@ if __name__ == '__main__':
 		cursor.execute(sql_statements.sql_create_table)
 	except Exception as e:
 		print(e)
-
+	
 	# Insert data
 	print('Inserting data')
 	cursor.execute(sql_statements.sql_insert_fake_data)
@@ -69,7 +69,7 @@ if __name__ == '__main__':
 		# print(sql)
 		
 		cursor.execute(sql)
-		
+	
 	# Read database
 	print('\nRead data after inserting transformed Castor data:')
 	cursor.execute(sql_statements.sql_query_data)
@@ -81,4 +81,6 @@ if __name__ == '__main__':
 	conn.commit()
 	conn.close()
 
-	
+
+if __name__ == '__main__':
+	test_castor()
